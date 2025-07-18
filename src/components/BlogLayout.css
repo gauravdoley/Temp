@@ -1,0 +1,22 @@
+.blog-layout {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003366;
+}
+
+.section-date {
+  margin-bottom: 2rem;
+  color: #777;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
