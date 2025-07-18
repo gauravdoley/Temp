@@ -1,3 +1,8 @@
+.blog-card-link {
+  text-decoration: none; /* remove the underline from the link */
+  color: inherit; /* have the link inherit the color from its parent */
+}
+
 .blog-card {
   width: 450px;
   height: 350px;
@@ -13,10 +18,16 @@
   z-index: 1;
 }
 
-.blog-card.expanded {
-  transform: scale(1.2);
+.blog-card:hover {
+  transform: scale(1.05);
   z-index: 10;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card:hover .blog-content h3,
+.blog-card:hover .blog-content .blog-description,
+.blog-card:hover .blog-footer span {
+  text-decoration: underline;
 }
 
 .blog-img {
@@ -64,4 +75,5 @@
   padding: 0.5rem 1rem;
   border-radius: 6px;
   cursor: pointer;
+  text-decoration: none; /* remove default underline */
 }
