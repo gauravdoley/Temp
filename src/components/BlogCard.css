@@ -1,15 +1,10 @@
-.blog-card-link {
-  text-decoration: none; /* remove the underline from the link */
-  color: inherit; /* have the link inherit the color from its parent */
-}
-
 .blog-card {
-  width: 450px;
+  width: 100%;
   height: 350px;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -20,14 +15,7 @@
 
 .blog-card:hover {
   transform: scale(1.05);
-  z-index: 10;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
-.blog-card:hover .blog-content h3,
-.blog-card:hover .blog-content .blog-description,
-.blog-card:hover .blog-footer span {
-  text-decoration: underline;
+  z-index: 5; /* Hovered card should appear on top */
 }
 
 .blog-img {
@@ -38,7 +26,7 @@
 }
 
 .blog-card.expanded .blog-img {
-  height: 140px; /* reduce image height to make space for text */
+  height: 140px;
 }
 
 .blog-content {
@@ -49,16 +37,18 @@
 
 .blog-content h3 {
   margin: 0.5rem 0;
+  text-decoration: none;
 }
 
 .blog-description {
   max-height: 60px;
   overflow: hidden;
   transition: max-height 0.4s ease;
+  text-decoration: none;
 }
 
 .blog-card.expanded .blog-description {
-  max-height: 300px; /* show more on hover */
+  max-height: 300px;
 }
 
 .blog-footer {
@@ -66,6 +56,7 @@
   justify-content: space-between;
   font-size: 0.8rem;
   margin: 1rem 0;
+  text-decoration: none;
 }
 
 .read-more {
@@ -75,5 +66,34 @@
   padding: 0.5rem 1rem;
   border-radius: 6px;
   cursor: pointer;
-  text-decoration: none; /* remove default underline */
+}
+
+.blog-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Allow overlapping when hovering center card */
+.center-card {
+  z-index: 2;
+  transform: scale(1.15);
+  transition: transform 1.5s ease, z-index 0.3s ease;
+}
+
+.center-card:hover {
+  z-index: 6;
+  transform: scale(1.2);
+}
+
+/* Side cards with lower base z-index */
+.side-card {
+  z-index: 1;
+  transform: scale(1);
+  transition: transform 1.5s ease, z-index 0.3s ease;
+}
+
+.side-card:hover {
+  z-index: 4;
+  transform: scale(1.15);
 }
